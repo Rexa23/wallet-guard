@@ -3,7 +3,7 @@
 ## Deploy in 60 seconds (drag & drop)
 
 1. Go to https://app.netlify.com
-2. Drag the entire `walletguard-site/` folder onto the Netlify dashboard
+2. Drag the **contents** of this folder (not the folder itself) onto the Netlify dashboard. Ensure `index.html` sits at the root of what you drop.
 3. Your site is live instantly at a `.netlify.app` URL
 
 ---
@@ -17,8 +17,8 @@ npm install -g netlify-cli
 # Login
 netlify login
 
-# Deploy (from walletguard-site/ folder)
-netlify deploy --dir=public --prod
+# Deploy (from project root folder)
+netlify deploy --dir=. --prod
 ```
 
 ---
@@ -30,7 +30,7 @@ netlify deploy --dir=public --prod
 3. Connect your GitHub repo
 4. Set build settings:
    - **Build command:** (leave empty — no build needed)
-   - **Publish directory:** `public`
+   - **Publish directory:** `.` (root of repo)
 5. Click Deploy
 
 ---
