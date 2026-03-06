@@ -10,31 +10,33 @@
 <meta property="og:type" content="website"/>
 <link rel="icon" href="/icon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
 
 <style>
 /* ── Variables ─────────────────────────────────────────────────── */
 :root {
-  --bg:       #020810;
-  --bg2:      #060f1e;
-  --bg3:      #0a1628;
-  --border:   #0e2340;
-  --border2:  #1a3358;
-  --green:    #00ff88;
-  --cyan:     #00ccff;
-  --red:      #ff3b3b;
-  --orange:   #ff8c00;
-  --yellow:   #f0c040;
-  --text:     #c8d8f0;
-  --muted:    #4a6080;
-  --dim:      #1e3050;
+  --bg:       #0b1120;
+  --bg2:      #101a30;
+  --bg3:      #15203c;
+  --border:   #1a2a48;
+  --border2:  #24385e;
+  --green:    #3ac376;
+  --cyan:     #48b5ff;
+  --red:      #e74c3c;
+  --orange:   #f39c12;
+  --yellow:   #f1c40f;
+  --text:     #d0d4db;
+  --muted:    #5a6b7e;
+  --dim:      #1f3452;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+code, pre, .addr-textarea, .code-block, .pill, .addr-block {
+  font-family:'JetBrains Mono',monospace;
+}
 html{scroll-behavior:smooth}
 body{
   background:var(--bg);color:var(--text);
-  font-family:'JetBrains Mono',monospace;
-  font-size:14px;line-height:1.6;overflow-x:hidden;
+  font-family:'Inter',sans-serif;
+  font-size:16px;line-height:1.6;overflow-x:hidden;
 }
 ::selection{background:var(--green)33;color:var(--green)}
 ::-webkit-scrollbar{width:5px;background:var(--bg)}
@@ -80,9 +82,10 @@ nav{
 .nav-link:hover{color:var(--text);border-color:var(--border2)}
 .nav-link.active{color:var(--green);border-color:var(--green)44;background:var(--green)0a}
 .nav-cta{
-  background:var(--green);color:#000;font-weight:700;font-size:12px;
-  padding:7px 18px;border-radius:6px;text-decoration:none;letter-spacing:0.05em;
+  background:var(--green);color:#000;font-weight:600;font-size:13px;
+  padding:10px 20px;border-radius:10px;text-decoration:none;letter-spacing:0.02em;
   transition:all .2s;border:none;cursor:pointer;
+  box-shadow:0 2px 8px var(--green)44;
 }
 .nav-cta:hover{background:#fff;box-shadow:0 0 20px var(--green)66}
 
@@ -119,17 +122,18 @@ h1 .accent{
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px}
 .btn-primary{
   background:linear-gradient(135deg,var(--green),var(--cyan));
-  color:#000;font-weight:700;font-size:13px;letter-spacing:0.06em;
-  padding:14px 32px;border-radius:8px;border:none;cursor:pointer;
+  color:#000;font-weight:600;font-size:14px;letter-spacing:0.02em;
+  padding:16px 36px;border-radius:12px;border:none;cursor:pointer;
   text-decoration:none;display:inline-flex;align-items:center;gap:8px;
-  transition:all .25s;box-shadow:0 0 32px var(--green)44;
+  transition:all .25s;box-shadow:0 4px 16px var(--green)44;
 }
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 48px var(--green)66}
 .btn-outline{
-  background:transparent;color:var(--text);font-weight:600;font-size:13px;
-  letter-spacing:0.05em;padding:13px 28px;border-radius:8px;
+  background:transparent;color:var(--text);font-weight:600;font-size:14px;
+  letter-spacing:0.02em;padding:15px 32px;border-radius:12px;
   border:1px solid var(--border2);cursor:pointer;text-decoration:none;
   display:inline-flex;align-items:center;gap:8px;transition:all .25s;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
 .btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
 
@@ -244,6 +248,7 @@ h2 em{font-style:normal;color:var(--green)}
 .input-card{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:16px;padding:24px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .input-label{font-size:11px;color:var(--muted);letter-spacing:0.08em;margin-bottom:10px}
 .addr-textarea{
@@ -273,6 +278,7 @@ h2 em{font-style:normal;color:var(--green)}
 
 .result-card{
   margin-top:14px;border-radius:14px;padding:20px;animation:fadeUp .3s ease;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .result-card.safe{background:#021a0b;border:1px solid #00ff8844}
 .result-card.threat{background:#180808;border:1px solid #ff3b3b55}
@@ -293,6 +299,7 @@ h2 em{font-style:normal;color:var(--green)}
 .history-card{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:16px;padding:20px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .history-item{
   display:flex;align-items:center;justify-content:space-between;
@@ -315,6 +322,7 @@ h2 em{font-style:normal;color:var(--green)}
 .threat-table{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:14px;overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .threat-table-head{
   display:grid;grid-template-columns:1fr 50px 90px 56px 100px 120px;
@@ -339,6 +347,7 @@ h2 em{font-style:normal;color:var(--green)}
 .kpi{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:14px;padding:20px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .kpi-icon{font-size:20px;margin-bottom:8px}
 .kpi-val{
@@ -351,6 +360,7 @@ h2 em{font-style:normal;color:var(--green)}
 .chart-card{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:14px;padding:20px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .chart-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:14px}
 .chain-bar-row{margin-bottom:14px}
@@ -363,6 +373,7 @@ h2 em{font-style:normal;color:var(--green)}
 .feature{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:16px;padding:28px;transition:all .3s;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .feature:hover{border-color:var(--green)33;transform:translateY(-3px);box-shadow:0 16px 48px #00000055}
 .feature-icon{font-size:28px;margin-bottom:14px}
@@ -375,6 +386,7 @@ h2 em{font-style:normal;color:var(--green)}
 .install-card{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:16px;padding:28px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 .install-card h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:16px}
 .code-block{
@@ -766,8 +778,8 @@ footer{
         <h3>⚙ Backend API (Optional)</h3>
         <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Enhanced detection with persistent threat DB and cross-session learning.</p>
         <div class="code-block"><span class="code-comment"># Clone and install</span>
-git clone https://github.com/rexa233-dev/walletguard
-cd walletguard-api
+git clone https://github.com/Rexa23/wallet-guard.git
+cd wallet-guard
 npm install
 
 <span class="code-comment"># Configure (optional keys)</span>
@@ -820,7 +832,8 @@ npm start
     </div>
     <div class="footer-bottom">
       <div class="footer-credit">
-        Built with precision by <strong>rexa</strong> &nbsp;·&nbsp; WalletGuard &copy; 2025 &nbsp;·&nbsp; Free to use
+        Built with precision by <strong>rexa</strong> &nbsp;·&nbsp; WalletGuard &copy; 2025 &nbsp;·&nbsp; Free to use<br>
+        <small style="color:var(--muted);font-size:11px;margin-top:4px;display:block">Privacy: Addresses are scanned in real-time from public blockchain APIs and not stored or logged.</small>
       </div>
       <a href="https://x.com/rexa233_dev" target="_blank" rel="noopener" class="footer-x-link">
         <div class="footer-x-icon">
