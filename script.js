@@ -1,4 +1,4 @@
-// ── GRID CANVAS ──────────────────────────────────────────────────────────────
+ // ── GRID CANVAS ──────────────────────────────────────────────────────────────
 (function(){
   const c=document.getElementById('gridCanvas'),ctx=c.getContext('2d');
   function resize(){c.width=window.innerWidth;c.height=window.innerHeight}
@@ -84,6 +84,37 @@ function toast(msg){
   const t=document.createElement('div');t.className='toast';t.textContent=esc(msg);
   document.body.appendChild(t);setTimeout(()=>t.remove(),2500);
 }
+
+// ── SCROLLSPY / NAV HIGHLIGHT ─────────────────────────────────────────────────
+(function(){
+  const sections = document.querySelectorAll('section[id]');
+  function updateNav(){
+    const scrollPos = window.scrollY + 80;
+    sections.forEach(sec=>{
+      const top = sec.offsetTop;
+      const bottom = top + sec.offsetHeight;
+      const link = document.querySelector(`.nav-link[href="#${sec.id}"]`);
+      if(!link) return;
+      if(scrollPos >= top && scrollPos < bottom){
+        document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+})();
+
+// ── MOBILE NAV TOGGLE ─────────────────────────────────────────────────────────
+(function(){
+  const btn = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if(btn && links){
+    btn.addEventListener('click', ()=> links.classList.toggle('open'));
+    // close when a link clicked
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  }
+})();
 
 // ── RATE LIMITING ───────────────────────────────────────────────────────────
 let scanCount = 0;
